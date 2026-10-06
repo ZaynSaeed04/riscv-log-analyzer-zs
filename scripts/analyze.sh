@@ -44,6 +44,7 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --help|-h) usage; exit 0 ;;
         --verbose) verb=true; shift ;;
+        --info) echo "RISC-V simulation log analyzer"; exit 0 ;;
         --format)
             [[ $# -ge 2 ]] || die "--format requires text or csv"
             [[ "$2" == "text" || "$2" == "csv" ]] || die "--format must be 'text' or 'csv'"
