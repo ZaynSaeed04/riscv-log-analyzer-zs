@@ -44,7 +44,10 @@ while [[ $# -gt 0 ]]; do
     case "$1" in
         --help|-h) usage; exit 0 ;;
         --verbose) verb=true; shift ;;
+        #merge conflict is resolved by keeping the --info and --version options from feature/version-flag and feature/info-flag branches   
         --info) echo "RISC-V simulation log analyzer"; exit 0 ;;
+        --version) echo "analyze.sh 1.0.0"; exit 0 ;;
+
         --format)
             [[ $# -ge 2 ]] || die "--format requires text or csv"
             [[ "$2" == "text" || "$2" == "csv" ]] || die "--format must be 'text' or 'csv'"
